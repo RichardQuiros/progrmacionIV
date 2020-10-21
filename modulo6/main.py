@@ -9,7 +9,7 @@ def obtenerTodo(url):
     while next:
         res = requests.get(next)
         res = res.json()
-        next = res['next'
+        next = res['next']
         #este for se debe a que el resulatado de cadad pagina queda alojado dentro de un array y esto provoca con no padramos iterar por
         #todo los valores; esta for devueleve cada item y lo aloja en un array en commun
         for item in res['results']:
@@ -58,7 +58,10 @@ def apracionDeEspeciePorPelicula(pelicula,especie):
             pass
         
     return res
-    
+
+#OBTENER PLANETAS ARIDOS
 #print(obtenerPlanetsPorClima('https://swapi.dev/api/planets/','arid'))
+#OBTENER APARICION DE ESPECIE EN PELICULA
 #print(len(apracionDeEspeciePorPelicula('https://swapi.dev/api/films/6/','http://swapi.dev/api/species/3/')))
+#OBTENER NAVE CON MAS LONGITUD
 #print(obtenerNaveMasGrande('https://swapi.dev/api/starships/'))
