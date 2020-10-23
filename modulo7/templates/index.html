@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <title>API_PALABRAS_PANAMEÑAS</title>
+
+</head>
+<body>
+  <!--NAVBAR-->
+    <div>
+        <nav class="navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="/">
+              <span style="font-weight: 800;">PROGRAMCION IV</span> Modulo 7
+            </a>
+          </nav>  
+  </div>
+  <!--EN NAVBAR-->
+  <!--BODY-->
+  <div class="container m-5">
+      <h4>Para ver las palabras</h4>
+    <a href="/palabra">/palabra</a>
+    <h4>Tambien puedes buscar palabra</h4>
+    <a href="/palabra/myPalabra">/palabra/myPalabra</a>
+    <div class="row p-4">
+    <h5>Puedes usar herramienta de peticiones de api como post man para</h5>
+    <div class="dropdown">
+      <a class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+       
+      </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <h6>POST</h6>
+    <a href="http://127.0.0.1:5000/palabra/myPalabra?definicion=mydefinicion2">http://127.0.0.1:5000/palabra/myPalabra?definicion=mydefinicion2</a>
+    <h6>PUT</h6>
+    <a href="http://127.0.0.1:5000/palabra/myPalabra?definicion=changed&nuevaPalabra=changed">http://127.0.0.1:5000/palabra/myPalabra?definicion=changed&nuevaPalabra=changed</a>
+    <h6>DELETE</h6>
+    <a href="http://127.0.0.1:5000//myPalabra">http://127.0.0.1:5000//myPalabra</a>
+  </div>
+  </div>
+  </div>
+
+        <h1>Tabla</h1>
+        <div>
+            <form class="form-inline" method="post" action="/">
+    
+            <button type="submit" name='refrescar' class="btn btn-primary ml-2 mb-2">Refrescar</button>
+        </form>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Palabra</th>
+              <th scope="col">Definicion</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for i in tabla%}
+            <tr>
+              <th scope="row">{{ loop.index }}</th>
+              <td>{{i.palabra}}</td>
+              <td>{{i.definicion}}</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+      </div>
+    
+</div>
+<!--END BODY-->
+</body>
